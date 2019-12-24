@@ -14,11 +14,6 @@ pipeline {
 	steps {
 	    sh 'gradle --no-daemon test'
         }
-	post {
-    	    always {
-        	junit 'build/test-results/test/*.xml'
-    	    }
-	}
     }
 
     stage('Build') {
