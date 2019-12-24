@@ -9,6 +9,7 @@ pipeline {
             }
         }
     }
+}
     stage('Test') {
 	steps {
 	    sh 'gradle --no-daemon test'
@@ -65,4 +66,4 @@ pipeline {
     	    '''
 	}
     }
-}
+
