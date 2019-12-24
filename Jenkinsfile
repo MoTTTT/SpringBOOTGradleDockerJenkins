@@ -8,8 +8,8 @@ pipeline {
                 sh 'chmod 775 *'
             }
         }
-    }
-}
+    
+
     stage('Test') {
 	steps {
 	    sh 'gradle --no-daemon test'
@@ -66,4 +66,5 @@ pipeline {
     	    '''
 	}
     }
-
+}
+}
