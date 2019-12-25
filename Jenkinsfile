@@ -17,20 +17,18 @@ pipeline {
     }
 
     stage('Update Docker UAT image') {
-	when { branch "master" }
         steps {
 	    sh '''
 		docker login -u "<userid>" -p "<password>"
     	        docker build --no-cache -t person .
-        	docker tag person:latest amritendudockerhub/person:latest
-                docker push amritendudockerhub/person:latest
+        	docker tag hello:latest motsdockerid/hello:latest
+                docker push motsdockerid/hello:latest
 		docker rmi person:latest
     	    '''
 	}
     }
 
     stage('Update UAT container') {
-	when { branch "master" }
         steps {
 	    sh '''
 	        docker login -u "<userid>" -p "<password>"
