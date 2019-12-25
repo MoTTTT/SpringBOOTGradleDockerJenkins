@@ -59,7 +59,6 @@ pipeline {
     }
 
     stage('Release Docker image') {
-        when { branch "master" }
 	when { buildingTag() }
 	steps {
     	    sh '''
