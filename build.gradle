@@ -15,7 +15,7 @@ apply plugin: 'io.spring.dependency-management'
 
 
 bootJar {
-    baseName = 'gs-spring-boot'
+    baseName = 'gs-spring-boot-docker'
     version =  '0.1.0'
 }
 
