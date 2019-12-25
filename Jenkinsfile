@@ -16,7 +16,23 @@ pipeline {
 	}
     }
 
+    stage('Build Docker image') {
+        steps {
+	    sh '''
+    	        docker build --no-cache -t hello .
+		docker stop hello
+    		docker rm hello
+    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
+    		docker rmi -f $(docker images -q --filter dangling=true)
+    	    '''
+	}
+    }
+
+
+
+
     stage('Update Docker UAT image') {
+        when { branch "master" }
         steps {
 	    sh '''
 		docker login -u "<userid>" -p "<password>"
@@ -29,6 +45,7 @@ pipeline {
     }
 
     stage('Update UAT container') {
+        when { branch "master" }
         steps {
 	    sh '''
 	        docker login -u "<userid>" -p "<password>"
@@ -42,6 +59,7 @@ pipeline {
     }
 
     stage('Release Docker image') {
+        when { branch "master" }
 	when { buildingTag() }
 	steps {
     	    sh '''
