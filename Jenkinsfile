@@ -45,8 +45,8 @@ pipeline {
     stage('Re-Run Docker image') {
         steps {
 	    sh '''
-		docker stop person
-    		docker rm person
+		docker stop hello
+    		docker rm hello
     		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
     	    '''
 	}
