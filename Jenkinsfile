@@ -20,14 +20,35 @@ pipeline {
         steps {
 	    sh '''
     	        docker build --no-cache -t hello .
-		docker stop hello
-    		docker rm hello
+    	    '''
+	}
+    }
+
+    stage('Tag Docker image') {
+        steps {
+	    sh '''
+        	docker tag hello:latest motsdockerid/hello:latest
+    	    '''
+	}
+    }
+
+    stage('Run Docker image') {
+        steps {
+	    sh '''
+    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
+    	    '''
+	}
+    }
+
+    stage('Clean Docker images?') {
+        when { branch "master" }
+        steps {
+	    sh '''
     		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
     		docker rmi -f $(docker images -q --filter dangling=true)
     	    '''
 	}
     }
-
 
 
 
