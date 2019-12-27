@@ -32,9 +32,21 @@ pipeline {
 	}
     }
 
-    stage('Run Docker image') {
+    stage('Run Docker image First time') {
+        when { branch "master" }
         steps {
 	    sh '''
+    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
+    	    '''
+	}
+    }
+
+
+    stage('Re-Run Docker image') {
+        steps {
+	    sh '''
+		docker stop person
+    		docker rm person
     		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
     	    '''
 	}
