@@ -36,7 +36,7 @@ pipeline {
         when { branch "master" }
         steps {
 	    sh '''
-    		docker run -p 8090:8080 --name hello -t -d motsdockerid/hello:latest
+    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
     	    '''
 	}
     }
@@ -47,7 +47,7 @@ pipeline {
 	    sh '''
 		docker stop hello
     		docker rm hello
-    		docker run -p 8090:8080 --name hello -t -d motsdockerid/hello:latest
+    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest
     	    '''
 	}
     }
