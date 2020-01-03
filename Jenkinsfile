@@ -47,7 +47,7 @@ pipeline {
 	    sh '''
 		docker stop hello
     		docker rm hello
-    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest -v /apps/logs:/logs
+    		docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest -v /logs:/apps/logs
     	    '''
 	}
     }
