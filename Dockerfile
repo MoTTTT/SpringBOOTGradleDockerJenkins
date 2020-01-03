@@ -1,5 +1,4 @@
 FROM openjdk:8-jdk-alpine
-LABEL vendor= "qsolutions"
 VOLUME /tmp
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
