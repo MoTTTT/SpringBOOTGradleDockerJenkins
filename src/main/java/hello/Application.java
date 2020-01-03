@@ -9,8 +9,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 
-@Configuration
-@PropertySource("classpath:server.properties")
+//@Configuration
+//@PropertySource("classpath:server.properties")
 
 @SpringBootApplication
 public class Application {
