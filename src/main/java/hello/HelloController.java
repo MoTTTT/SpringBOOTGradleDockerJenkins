@@ -12,6 +12,6 @@ public class HelloController {
     @RequestMapping("/")
     public String index() {
 	LOGGER.info("Responding to call for index.");
-	return "HelloCOntroller Response";
+	return "HelloController Response";
     }
 }
