@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 public class HelloController {
-
-  @RequestMapping("/")
-  public String index() {
-    return "Greetings from Spring Boot!";
-  }
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
+    @RequestMapping("/")
+    public String index() {
+	LOGGER.info("Responding to call for index.");
+	return "HelloCOntroller Response";
+    }
 }
