@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jvm-alpine
 VOLUME /tmp /apps/logs
 VOLUME /tmp
 ARG JAR_FILE=build/libs/*.jar
