@@ -18,7 +18,7 @@ pipeline {
         steps { sh ''' docker tag hello:latest motsdockerid/hello:latest ''' }
     }
     stage('Run Docker image First time') {
-        when { branch "master" }
+	when { branch "master" }
         steps { sh ''' docker run -p 8090:8090 --name hello -t -d motsdockerid/hello:latest ''' }
     }
     stage('Re-Run Docker image') {
