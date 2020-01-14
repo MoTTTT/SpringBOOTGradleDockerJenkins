@@ -1,6 +1,8 @@
 buildscript {
     repositories {
-	url "http://bdlh-ep-sand01.telkom.co.za:8081/repository/maven-public/"
+    maven {
+	    url "http://bdlh-ep-sand01.telkom.co.za:8081/repository/maven-public/"
+	}
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE")
@@ -20,7 +22,10 @@ bootJar {
 }
 
 repositories {
-    url "http://bdlh-ep-sand01.telkom.co.za:8081/repository/maven-public/"
+    maven {
+	    url "http://bdlh-ep-sand01.telkom.co.za:8081/repository/maven-public/"
+	}
+    }
 }
 
 sourceCompatibility = 1.8
