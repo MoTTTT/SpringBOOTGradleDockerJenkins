@@ -1,7 +1,7 @@
 buildscript {
     repositories {
     maven {
-	    url "http://bdlh-ep-sand01.telkom.co.za:8081/repository/maven-public/"
+	    url "http://bdlh-ep-pov01.telkom.co.za:8081/repository/maven-public/"
 	}
     }
     dependencies {
@@ -23,7 +23,7 @@ bootJar {
 
 repositories {
     maven {
-	    url "http://bdlh-ep-sand01.telkom.co.za:8081/repository/maven-public/"
+	    url "http://bdlh-ep-pov01.telkom.co.za:8081/repository/maven-public/"
 	}
 }
 
