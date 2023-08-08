@@ -1,4 +1,4 @@
-# Demo
+# SpringBOOTGradleDockerJenkins
 Reference app for proving Jenkins Docker Image build and deploy
 
 This Project illustrates the following:
